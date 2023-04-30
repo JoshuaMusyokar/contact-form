@@ -5,6 +5,10 @@ const nodemailer = require("nodemailer");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("you sent your mail");
+});
+
 app.post("/send_email", (req, res) => {
   const from = req.body.name;
   const email = req.body.email;
